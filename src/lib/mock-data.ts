@@ -1,4 +1,4 @@
-import type { InsurancePolicy, Property } from "./types";
+import type { InsurancePolicy, InventoryItem, Property } from "./types";
 
 export const property: Property = {
   id: "prop_eppendorf",
@@ -31,5 +31,49 @@ export const seedInsurances: InsurancePolicy[] = [
     type: "haftpflicht",
     provider: "HanseMerkur",
     premiumPerYear: 72,
+  },
+];
+
+export const seedInventory: InventoryItem[] = [
+  {
+    id: "inv_1",
+    name: "USM Haller Sideboard",
+    category: "moebel",
+    value: 4200,
+    purchaseDate: "2022-03-10",
+  },
+  {
+    id: "inv_2",
+    name: "Vitra Eames Lounge Chair",
+    category: "moebel",
+    value: 5900,
+    purchaseDate: "2021-09-15",
+  },
+  {
+    id: "inv_3",
+    name: 'MacBook Pro 16"',
+    category: "technik",
+    value: 2600,
+    purchaseDate: "2023-11-02",
+  },
+  {
+    id: "inv_4",
+    name: "Sonos Arc Soundsystem",
+    category: "technik",
+    value: 1500,
+  },
+  {
+    id: "inv_5",
+    name: "Eheringe (Paar)",
+    category: "schmuck",
+    value: 3800,
+    purchaseDate: "2020-06-19",
+  },
+  {
+    id: "inv_6",
+    name: "Kunstdruck (signiert)",
+    category: "kunst",
+    value: 6500,
+    purchaseDate: "2023-02-01",
   },
 ];

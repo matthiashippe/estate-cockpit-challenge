@@ -1,5 +1,5 @@
-import { seedInsurances } from "./mock-data";
-import type { InsurancePolicy, NewInsurance } from "./types";
+import { seedInsurances, seedInventory } from "./mock-data";
+import type { InsurancePolicy, NewInsurance, InventoryItem, NewInventoryItem } from "./types";
 
 /**
  * Simulates a network request: resolves with `value` after `ms`, or rejects
@@ -30,6 +30,18 @@ export function createInsurance(input: NewInsurance): Promise<InsurancePolicy> {
   const created: InsurancePolicy = {
     ...input,
     id: `ins_${crypto.randomUUID().slice(0, 8)}`,
+  };
+  return simulateRequest(created, { ms: 450 });
+}
+
+export function fetchInventory(): Promise<InventoryItem[]> {
+  return simulateRequest(seedInventory, { ms: 750 });
+}
+
+export function createInventoryItem(input: NewInventoryItem): Promise<InventoryItem> {
+  const created: InventoryItem = {
+    ...input,
+    id: `inv_${crypto.randomUUID().slice(0, 8)}`,
   };
   return simulateRequest(created, { ms: 450 });
 }

@@ -35,3 +35,25 @@ export const INSURANCE_LABELS: Record<InsuranceType, string> = {
   elementar: "Elementar",
   rechtsschutz: "Rechtsschutz",
 };
+
+export type InventoryCategory = "moebel" | "technik" | "schmuck" | "kunst" | "sonstiges";
+
+export interface InventoryItem {
+  id: string;
+  name: string;
+  category: InventoryCategory;
+  /** Estimated current value in euro. */
+  value: number;
+  /** ISO date string of purchase, optional. */
+  purchaseDate?: string;
+}
+
+export type NewInventoryItem = Omit<InventoryItem, "id">;
+
+export const INVENTORY_LABELS: Record<InventoryCategory, string> = {
+  moebel: "Möbel",
+  technik: "Technik",
+  schmuck: "Schmuck",
+  kunst: "Kunst",
+  sonstiges: "Sonstiges",
+};
