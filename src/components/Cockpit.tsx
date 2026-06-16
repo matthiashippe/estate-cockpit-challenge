@@ -5,6 +5,7 @@ import { GlassButton } from "@/components/ui/GlassButton";
 import { Text } from "@/components/ui/Text";
 import { PropertyHero } from "./PropertyHero";
 import { InsuranceSection } from "@/features/insurance/InsuranceSection";
+import { InventorySection } from "@/features/inventory/InventorySection";
 import { property } from "@/lib/mock-data";
 
 export function Cockpit() {
@@ -25,6 +26,7 @@ export function Cockpit() {
       <Chassis>
         <PropertyHero property={property} />
         <InsuranceSection />
+        <InventorySection />
       </Chassis>
     </main>
   );
