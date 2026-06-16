@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — the single source of truth for the visual language.
+  These mirror the real PropertyPilot app. Use them via Tailwind utilities
+  (bg-cream, text-ink, rounded-card, text-title2, font-heading …). Avoid raw
+  hex / arbitrary values in components — `npm run check:design` flags them.
+*/
+@theme {
+  /* Surfaces */
+  --color-cream: #f8f3e9; /* the card surface — everything is a cream card */
+  --color-canvas: #0a0a0a; /* the near-black "seam" shown between stacked cards */
+  --color-paper: #ffffff; /* grouped-list (iOS-style) rows */
+
+  /* Text — pure black primary, exactly like the app */
+  --color-ink: #000000;
+  --color-ink-soft: #767676;
+  --color-ink-faint: #b3b2b2;
+
+  /* Lines */
+  --color-line: #dedede; /* card borders */
+  --color-hairline: rgba(0, 0, 0, 0.08); /* in-card / grouped-row separators */
+
+  /* Brand green */
+  --color-brand: #28926e;
+  --color-brand-deep: #1d6e53;
+  --color-brand-tint: #e5f3f0;
+
+  /* Terracotta — destructive / error (NOT a pure red) */
+  --color-terracotta: #c26b6b;
+  --color-terracotta-tint: #f9ecec;
+
+  /* Gold */
+  --color-gold: #fabe4d;
+  --color-gold-tint: #fdf0c8;
+  --color-gold-deep: #a87d2a;
+
+  /* Warning (amber) — used for things like under-insurance */
+  --color-warning: #f59e0b;
+  --color-warning-tint: #fce9c2;
+  --color-warning-ink: #6b3d02;
+
+  /* Radii */
+  --radius-card: 24px; /* the cream card */
+  --radius-card-lg: 28px; /* hero / sheet top */
+  --radius-grouped: 10px; /* iOS-style grouped list */
+  --radius-tile: 14px;
+
+  /* Type scale — iOS HIG roles; line-height ratio is always >= 1.25 */
+  --text-display: 44px;
+  --text-display--line-height: 55px;
+  --text-figure: 52px;
+  --text-figure--line-height: 56px;
+  --text-large-title: 34px;
+  --text-large-title--line-height: 43px;
+  --text-title1: 28px;
+  --text-title1--line-height: 35px;
+  --text-title2: 22px;
+  --text-title2--line-height: 28px;
+  --text-title3: 20px;
+  --text-title3--line-height: 25px;
+  --text-headline: 17px;
+  --text-headline--line-height: 22px;
+  --text-body: 17px;
+  --text-body--line-height: 22px;
+  --text-callout: 16px;
+  --text-callout--line-height: 21px;
+  --text-subhead: 15px;
+  --text-subhead--line-height: 20px;
+  --text-footnote: 13px;
+  --text-footnote--line-height: 18px;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-caption2: 11px;
+  --text-caption2--line-height: 14px;
+
+  /* Elevation — functional only; cards are flat (no decorative shadow) */
+  --shadow-sheet: 0 -10px 32px rgba(0, 0, 0, 0.08);
+  --shadow-glass: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fonts come from next/font (see src/app/layout.tsx) */
+@theme inline {
+  --font-sans: var(--font-lato);
+  --font-body: var(--font-lato);
+  --font-heading: var(--font-oswald);
+}
